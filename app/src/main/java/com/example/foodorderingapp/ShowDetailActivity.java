@@ -63,7 +63,7 @@ public class ShowDetailActivity extends AppCompatActivity {
         titleTxt.setText(title);
 
         descriptionTxt.setText(des);
-        feeTxt.setText("\u20B9 "+price);
+        feeTxt.setText("\u20B9 "+ price);
         numberOrderTxt.setText(String.valueOf(numberOrder));
 
 
