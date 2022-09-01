@@ -27,13 +27,14 @@ public class SignUp extends AppCompatActivity {
         mPassword=findViewById(R.id.password);
         mpPhone=findViewById(R.id.phone);
         mRegistrerBtn=findViewById(R.id.registerBtn);
-        mloginBtn=findViewById(R.id.registerBtn);
+        mloginBtn=findViewById(R.id.createtext);
         progressBar=findViewById(R.id.progressBar);
 
         mloginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),Login.class));
+                Intent intent=new Intent(SignUp.this,Login.class);
+                startActivity(intent);
             }
         });
         mRegistrerBtn.setOnClickListener(new View.OnClickListener() {

@@ -2,7 +2,6 @@ package com.example.foodorderingapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,18 +27,6 @@ private RecyclerView recyclerViewCategoryList,recyclerViewPopularlist;
         recyclerViewPopular();
     }
 
-    @Override
-    public void onBackPressed() {
-    }
-
-    @Override
-    public boolean onKeyDown(int key_code, KeyEvent key_event) {
-        if (key_code== KeyEvent.KEYCODE_BACK) {
-            super.onKeyDown(key_code, key_event);
-            return true;
-        }
-        return false;
-    }
 
     private void recyclerViewCategoryList() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);

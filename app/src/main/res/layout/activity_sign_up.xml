@@ -132,7 +132,7 @@
         android:layout_marginTop="18dp"
         android:text="Already Account?Login Here"
         android:textSize="17dp"
-        android:textColor="#FFBF00"
+        android:textColor="#ff5e00"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerBtn"
