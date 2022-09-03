@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide;
 import com.example.foodorderingapp.Domain.FoodDomain;
 import com.example.foodorderingapp.R;
 import com.example.foodorderingapp.ShowDetailActivity;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 
@@ -50,13 +51,19 @@ public class PoplurarAdaptor extends RecyclerView.Adapter<PoplurarAdaptor.ViewHo
                 holder.itemView.getContext().startActivity(intent);
             }
         });
-//        holder.addBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent=new Intent(holder.itemView.getContext(), ShowDetailActivity.class);
-//                holder.itemView.getContext().startActivity(intent);
-//            }
-//        });
+        holder.addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Nothing to Do!!", Snackbar.LENGTH_LONG)
+                        .setAction("CLOSE", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+
+                            }
+                        })
+                        .show();
+            }
+        });
     }
 
 

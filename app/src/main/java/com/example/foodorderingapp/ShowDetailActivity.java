@@ -9,13 +9,12 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
-import com.example.foodorderingapp.Domain.FoodDomain;
+import com.google.android.material.snackbar.Snackbar;
 
 public class ShowDetailActivity extends AppCompatActivity {
     private TextView addToCartBtn;
     private TextView titleTxt, feeTxt, descriptionTxt, numberOrderTxt;
     private ImageView plusBtn, minusBtn, picFood;
-    private FoodDomain object;
     int numberOrder = 1;
 
     @Override
@@ -41,11 +40,24 @@ public class ShowDetailActivity extends AppCompatActivity {
                 numberOrderTxt.setText(String.valueOf(numberOrder));
             }
         });
+        addToCartBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Nothing to Do!!", Snackbar.LENGTH_LONG)
+                        .setAction("CLOSE", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+
+                            }
+                        })
+                        .setActionTextColor(getResources().getColor(android.R.color.holo_red_light ))
+                        .show();
+            }
+        });
         getBundle();
     }
 
     private void getBundle() {
-        object = (FoodDomain) getIntent().getSerializableExtra("object");
 
         String title = getIntent().getStringExtra("title");
         String pic = getIntent().getStringExtra("pic");
