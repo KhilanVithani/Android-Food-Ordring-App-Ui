@@ -1,11 +1,11 @@
 package com.example.foodorderingapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class Welcome extends AppCompatActivity {
 private ConstraintLayout startBtn;
@@ -18,7 +18,7 @@ private ConstraintLayout startBtn;
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Welcome.this,Login.class));
+                startActivity(new Intent(Welcome.this,SignUp.class));
             }
         });
     }

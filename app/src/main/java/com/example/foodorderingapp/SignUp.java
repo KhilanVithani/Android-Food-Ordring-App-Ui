@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,7 +14,6 @@ public class SignUp extends AppCompatActivity {
     public static final String TAG = "TAG";
     EditText mUsername,mEmail, mPassword,mpPhone;
     Button mRegistrerBtn;
-    TextView mloginBtn;
     ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,16 +25,9 @@ public class SignUp extends AppCompatActivity {
         mPassword=findViewById(R.id.password);
         mpPhone=findViewById(R.id.phone);
         mRegistrerBtn=findViewById(R.id.registerBtn);
-        mloginBtn=findViewById(R.id.createtext);
         progressBar=findViewById(R.id.progressBar);
 
-        mloginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(SignUp.this,Login.class);
-                startActivity(intent);
-            }
-        });
+
         mRegistrerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,6 +51,11 @@ public class SignUp extends AppCompatActivity {
                     return;
                 }
                 progressBar.setVisibility(View.VISIBLE);
+
+                Intent intent=new Intent(SignUp.this,Login.class);
+                intent.putExtra("email",email);
+                intent.putExtra("pass",pass);
+                startActivity(intent);
             }
         });
     }

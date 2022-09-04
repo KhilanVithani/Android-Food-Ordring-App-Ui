@@ -1,8 +1,6 @@
 package com.example.foodorderingapp;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -16,8 +14,8 @@ import com.example.foodorderingapp.Domain.FoodDomain;
 import java.util.ArrayList;
 
 public class HomeActivity extends AppCompatActivity {
-private RecyclerView.Adapter adapter,adapter2;
-private RecyclerView recyclerViewCategoryList,recyclerViewPopularlist;
+private RecyclerView.Adapter adapter,adapter2,adapter3;
+private RecyclerView recyclerViewCategoryList,recyclerViewPopularlist,recyclerViewAllCategortyList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +23,7 @@ private RecyclerView recyclerViewCategoryList,recyclerViewPopularlist;
         
         recyclerViewCategoryList();
         recyclerViewPopular();
+        recyclerViewAllCAtegory();
     }
 
 
@@ -61,9 +60,25 @@ private RecyclerView recyclerViewCategoryList,recyclerViewPopularlist;
 
 
     }
+    private void recyclerViewAllCAtegory(){
+        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
+        recyclerViewPopularlist = findViewById(R.id.recyclerView3);
+        recyclerViewPopularlist.setLayoutManager(linearLayoutManager);
 
-    public void Popular(View view) {
-        Intent intent=new Intent(HomeActivity.this,ShowDetailActivity.class);
-        startActivity(intent);
+        ArrayList<FoodDomain>foodList = new ArrayList<>();
+        foodList.add(new FoodDomain("Pepperoni pizza","pop_1","slices pepperoni,mozzerella cheese,fresh oregano,ground black pepper,pizza sauce",1400.0));
+        foodList.add(new FoodDomain("Signature Cold Coffee","pop_8","Our classic filter coffee on the rocks, Serving Size(gm/ml) - 300, Energy (kcal) - 227.52 Contains Milk",229.99));
+        foodList.add(new FoodDomain("Veg Sub Combo","pop_6","Choose your favourite tasty combo of one veg sub (15cm, 6\") along with choice of your drink.",268.50));
+        foodList.add(new FoodDomain("Cheeshe Burger","pop_2","beef, Goude Cheese, Special sauce, Lettuce, tomato",100.0));
+        foodList.add(new FoodDomain("Vegetable Pizza","pop_3","olive oil, vegetable oil, pitted kalamata, chrrey tomatoes,fresh oregano, basil",1250.0));
+        foodList.add(new FoodDomain("Maggi","pop_4","Classic Maggi adorned with cheese",50.0));
+        foodList.add(new FoodDomain("French Fries","pop_5","Crispy golden Fries, fried to perfection and lightly salted.",200.0));
+        foodList.add(new FoodDomain("Veg American Hotdog","pop_7","[Veg Preparation] The American Hot Dog, with Soya Sausage,topped with Mustard & Mayo Sauce" ,125.50));
+
+        adapter3 = new PoplurarAdaptor(foodList);
+        recyclerViewPopularlist.setAdapter(adapter3);
+
+
     }
+
 }

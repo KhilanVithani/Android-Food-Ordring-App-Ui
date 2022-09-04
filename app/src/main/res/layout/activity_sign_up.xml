@@ -125,20 +125,6 @@
         />
 
 
-    <TextView
-        android:id="@+id/createtext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:text="Already Account?Login Here"
-        android:textSize="17dp"
-        android:textColor="#ff5e00"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registerBtn"
-        />
-
-
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
@@ -148,7 +134,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/createtext"
+        app:layout_constraintTop_toBottomOf="@id/registerBtn"
         app:layout_constraintVertical_bias="0.26"
         />
 

@@ -14,18 +14,22 @@ public class Login extends AppCompatActivity {
 
     TextInputEditText emailT;
     TextInputEditText passT;
-    String email="food@gmail.com",pass="food";
+    String email,pass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         emailT=findViewById(R.id.email);
         passT=findViewById(R.id.pass);
+
+        email=getIntent().getStringExtra("email");
+        pass=getIntent().getStringExtra("pass");
     }
 
 
 
     public void submit(View view) {
+
                   if(!emailT.getText().toString().equals("")&&!passT.getText().toString().equals("")){
             if(email.equals(emailT.getText().toString())&&pass.equals(passT.getText().toString())){
                 Snackbar.make(view, "Login Success", Snackbar.LENGTH_LONG)
